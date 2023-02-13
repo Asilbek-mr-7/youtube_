@@ -11,6 +11,7 @@ def home(request):
             url.check_availability()
             
             streams=url.streams.filter(progressive=True)
+            print(streams)
         except:
             return render(request,"error.html")
         return render(request,"download.html",{'streams':streams,'url':url})
